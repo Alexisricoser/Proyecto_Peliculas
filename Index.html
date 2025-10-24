@@ -8,25 +8,28 @@
 </head>
 <body>
     <h1>Catalogo de peliculas</h1>
+    <button id="verCatalogo">Ver catalogo</button>
+    <button id="verForm">Añadir al catalogo</button>
+    <hr>
 
-    <div id="contForm">
+    <div id="contForm" hidden>
         <h2>Añadir pelcula</h2>
         <form id="formulario">
             <label for="Titulo">Titulo</label>
             <br>
-            <input type="text" id="Titulo">
+            <input name="Titulo" type="text" id="Titulo">
             <br>
-            <label for="Director">Director</label>
+            <label  for="Director">Director</label>
             <br>
-            <input type="text" id="Director">
+            <input name="Director" type="text" id="Director">
             <br>
-            <label for="año">Año de estreno</label>
+            <label  for="año">Año de estreno</label>
             <br>
-            <input type="text" id="año">
+            <input name="año" type="text" id="año">
             <br>
-            <label for="Genero">Genero</label>
+            <label for="Genero">Género</label>
             <br>
-            <input type="text" id="Genero">
+            <input name="Genero" type="text" id="Genero">
             <br>
             <label for="Puntuacion">Puntuacion</label>
             <br>
@@ -42,12 +45,11 @@
             <button id="botonenviar">Añadir al catálogo</button>
         </form>
     </div>
-    <hr>
     <div id="Catalogo">
         <form>
             <input type="text" id="buscadorTitulo" placeholder="Buscar Titulo">
             <input type="text" id="buscadorDirector" placeholder="Buscar Director">
-            <label for="buscadorGenero">Genero: </label>
+            <label for="buscadorGenero">Género: </label>
             <select name="buscadorGenero" id="buscadorGenero">
                 <option value="Defaut">Géneros</option>
                 <option value="Comedia">Comedia</option>
@@ -83,5 +85,6 @@
             <p>Valoracion: ⭐⭐⭐⭐⭐</p>
         </div>
     </div>
+    <script src="js/peliculas.js"></script>
 </body>
 </html>
