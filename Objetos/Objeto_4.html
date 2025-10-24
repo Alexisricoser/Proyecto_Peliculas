@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /*
+        Aquí la función makeUser devuelve un objeto.
+¿Cuál es el resultado de acceder a su ref? ¿Por qué?
+function makeUser() {
+return {
+name: "John",
+ref: this
+};
+}
+let user = makeUser();
+*/
+        function makeUser() {
+            return {
+                name: "John",
+                ref: this
+            };
+        }
+        let user = makeUser();
+        alert(user.ref); // Aquí 'this' no se refiere al objeto creado, sino al contexto global (window en navegadores)
+    
+    </script>
+</body>
+
+</html>

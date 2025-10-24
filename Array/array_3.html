@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /* 
+        Tratemos 5 operaciones de array.
+Crear un array styles con los items “Jazz” y “Blues”.
+Agregar “Rock-n-Roll” al final.
+Reemplazar el valor en el medio por “Classics”. Tu código para encontrar el valor
+medio debe funcionar con cualquier array de longitud impar.
+Quitar el primer valor del array y mostrarlo.
+Anteponer Rap y Reggae al array.
+El array durante el proceso:
+Jazz, Blues
+Jazz, Blues, Rock-n-Roll
+Jazz, Classics, Rock-n-Roll
+Classics, Rock-n-Roll
+Rap, Reggae, Classics, Rock-n-Roll
+*/
+        let styles = ["Jazz", "Blues"];
+        alert(styles);
+        styles.push("Rock-n-Roll");
+        alert(styles);
+        let middleIndex = Math.floor((styles.length - 1) / 2);
+        styles[middleIndex] = "Classics";
+        alert(styles);
+        let firstElement = styles.shift();
+        alert(firstElement);
+        alert(styles);
+        styles.unshift("Rap", "Reggae");
+        alert(styles);
+    </script>
+</body>
+
+</html>

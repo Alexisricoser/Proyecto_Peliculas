@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Actividad 2 – Nivel avanzado</h1>
+	<p>***Título:** Gestión segura de usuarios y pedidos online con encadenamiento opcional</p>
+    <script>
+        /*
+        Contexto:
+Queremos representar la información de un único usuario de una tienda online. En algunos casos, el usuario puede no tener dirección, pedido o método de notificación, y el objeto usuario incluso puede ser null.
+El objetivo es acceder a todos los datos de forma segura, sin provocar errores, utilizando encadenamiento opcional (?., ?.[], ?.()).
+Enunciado:
+1. Declara un objeto usuario con la siguiente estructura:
+let usuario = {
+  nombre: "Laura",
+  direccion: { ciudad: "Castellón", calle: "Gran Vía 123" },
+  pedido: { producto: "Portátil", precio: 899 },
+  notificar() { console.log(`Notificación enviada a ${this.nombre}`); }
+};
+        */
+        // Paso 1: Declarar el objeto usuario
+        let usuario = {
+            nombre: "Laura",
+            direccion: { ciudad: "Castellón", calle: "Gran Vía 123" },
+            pedido: { producto: "Portátil", precio: 899 },
+            notificar() { console.log(`Notificación enviada a ${this.nombre}`); }
+        };
+    /*
+2. Declara otro objeto visitante sin dirección ni pedido, y sin el método notificar().
+    */
+   let visitante = {
+       nombre: "Carlos"
+   };
+    /*
+    3. Declara una variable usuarioActual que pueda ser igual a usuario, visitante o null.
+    */
+    let usuarioActual = usuario;
+    /*
+4. Muestra en consola:
+    • 🏷️ El nombre del usuario o "Desconocido".
+    • 🏠 La ciudad de residencia o "Sin dirección".
+    • 🛒 El producto del pedido o "Sin pedidos".
+    • 📩 Ejecuta el método notificar() solo si existe.
+    • 📧 Accede a la propiedad "email" con ?.[] y muestra "Sin email".
+    */
+    console.log(`Nombre del usuario: ${usuarioActual?.nombre ?? 'Desconocido'}`);
+    console.log(`Ciudad de residencia: ${usuarioActual?.direccion?.ciudad ?? 'Sin dirección'}`);
+    console.log(`Producto del pedido: ${usuarioActual?.pedido?.producto ?? 'Sin pedidos'}`);
+    usuarioActual?.notificar?.();
+    console.log(`Email del usuario: ${usuarioActual?.['email'] ?? 'Sin email'}`);
+    /*
+    5. Todos los accesos deben realizarse usando encadenamiento opcional sin usar condicionales if ni operadores ternarios.
+    */
+   console.log(`Nombre del usuario: ${usuarioActual?.nombre ?? 'Desconocido'}`);
+   console.log(`Ciudad de residencia: ${usuarioActual?.direccion?.ciudad ?? 'Sin dirección'}`);
+   console.log(`Producto del pedido: ${usuarioActual?.pedido?.producto ?? 'Sin pedidos'}`);
+   usuarioActual?.notificar?.();
+   console.log(`Email del usuario: ${usuarioActual?.['email'] ?? 'Sin email'}`);
+</script>
+</body>
+
+</html>

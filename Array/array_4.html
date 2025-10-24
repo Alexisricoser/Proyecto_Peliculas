@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /* 
+        Escribe una función sumInput() que:
+Pida al usuario valores usando prompt y los almacene en el array.
+Termine de pedirlos cuando el usuario ingrese un valor no numérico, una
+cadena vacía, o presione “Escape”.
+Calcule y devuelva la suma de los items del array.
+P.D. Un cero 0 es un número válido, por favor no detengas los ingresos con el cero.
+        */
+        function sumInput() {
+            let numbers = [];
+
+            while (true) {
+                let value = prompt("Ingrese un número:", 0);
+
+                // Detener la entrada si el valor es no numérico, vacío o se presiona "Cancelar"
+                if (value === null || value === "" || !isFinite(value)) break;
+
+                numbers.push(+value); // Convertir a número y agregar al array
+            }
+
+            let sum = 0;
+            for (let number of numbers) {
+                sum += number;
+            }
+            return sum;
+        }
+
+        alert(sumInput());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /* 
+        1. Crea un objeto inventory con varias propiedades, donde cada clave es un producto y el valor es
+la cantidad en stock.
+2. Recorre el objeto con for..in para mostrar el stock disponible de cada producto.
+3. Añade la función updateStock(item, quantity) que actualice el stock:
+- Si el producto existe, sume la cantidad.
+- Si no existe, cree la propiedad con ese valor.
+Prueba con:
+updateStock("mouse", -2);
+updateStock("monitor", 4);
+*/
+        let inventory = {
+            laptop: 10,
+            keyboard: 15,
+            mouse: 5
+        };
+
+        
+        for (let item in inventory) {
+            alert(item + ": " + inventory[item]);
+        }
+
+        function updateStock(item, quantity) {
+            if (item in inventory) {
+                inventory[item] += quantity; // Sumar la cantidad si el producto existe
+            } else {
+                inventory[item] = quantity; // Crear la propiedad si no existe
+            }
+        }
+
+        // Pruebas de la función updateStock
+        updateStock("mouse", -2);
+        updateStock("monitor", 4);
+
+        alert("Inventario actualizado:");
+        for (let item in inventory) {
+            alert(item + ": " + inventory[item]);
+        }
+        
+
+    </script>
+</body>
+
+</html>
