@@ -7,6 +7,81 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <h1>Catalogo de peliculas</h1>
+
+    <div id="contForm">
+        <h2>Añadir pelcula</h2>
+        <form id="formulario">
+            <label for="Titulo">Titulo</label>
+            <br>
+            <input type="text" id="Titulo">
+            <br>
+            <label for="Director">Director</label>
+            <br>
+            <input type="text" id="Director">
+            <br>
+            <label for="año">Año de estreno</label>
+            <br>
+            <input type="text" id="año">
+            <br>
+            <label for="Genero">Genero</label>
+            <br>
+            <input type="text" id="Genero">
+            <br>
+            <label for="Puntuacion">Puntuacion</label>
+            <br>
+            <select name="Puntuacion" id="Puntuacion">
+
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+
+            <button id="botonenviar">Añadir al catálogo</button>
+        </form>
+    </div>
+    <hr>
+    <div id="Catalogo">
+        <form>
+            <input type="text" id="buscadorTitulo" placeholder="Buscar Titulo">
+            <input type="text" id="buscadorDirector" placeholder="Buscar Director">
+            <label for="buscadorGenero">Genero: </label>
+            <select name="buscadorGenero" id="buscadorGenero">
+                <option value="Defaut">Géneros</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Accion">Accion</option>
+                <option value="Romance">Romance</option>
+                <option value="drama">Drama</option>
+                <option value="terror">Terror</option>
+                <option value="cienciaFiccion">Ciencia ficcion</option>
+                <option value="fantasia">Fantasía</option>
+            </select>
+            <br>
+            <button class="mejorValoradas">Ver mejor valoradas</button>
+            <Button class="eliminarFiltros">Eliminar filtros</Button>
+            <p class="contadorCatalogo">Numero de peliculas/series: numero</p>
+        </form>
+        <div class="contenido">
+            <h2>Titulo: Shrek</h1>
+            <p>Director: Andrew Adamson</p>
+            <p>Genero: Comedia</p>
+            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
+            <button class="Editar">Editar</button>
+            <button class="Borrar">Borrar</button>
+        </div>
+        <div class="contenido">
+            <h2>Titulo: Shrek</h1>
+            <p>Director: Andrew Adamson</p>
+            <p>Genero: Comedia</p>
+            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
+        </div><div class="contenido">
+            <h2>Titulo: Shrek</h1>
+            <p>Director: Andrew Adamson</p>
+            <p>Genero: Comedia</p>
+            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
+        </div>
+    </div>
 </body>
 </html>

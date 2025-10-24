@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Actividad 1 – Nivel medio</h1>
+	<p>**Título:** Acceso seguro a propiedades y métodos con el operador ?.</p>
+    <script>
+        /*
+        Enunciado:
+Desarrolla un programa en JavaScript que cumpla los siguientes requisitos:
+1. Declara un objeto usuario con las propiedades: nombre, direccion (objeto con calle y numero), y metodoSaludo() que muestre un mensaje en consola.
+2. Declara un segundo objeto visitante sin dirección ni método de saludo.
+3. Usa encadenamiento opcional (?., ?.[], ?.()) para:
+   - Mostrar el nombre de la calle del usuario y del visitante sin errores.
+   - Llamar al método metodoSaludo() solo si existe.
+   - Acceder a una propiedad 'email' con corchetes de forma segura.
+4. Si una propiedad no existe, debe mostrarse 'Información no disponible'.
+Ejemplo de salida esperada:
+Calle del usuario: Gran Vía
+Calle del visitante: Información no disponible
+Saludo del usuario: ¡Hola, soy Laura!
+Saludo del visitante: Información no disponible
+Email del usuario: Información no disponible
+        */
+        // Paso 1: Declarar el objeto usuario
+        const usuario = {
+            nombre: 'Laura',
+            direccion: {
+                calle: 'Gran Vía',
+                numero: 123
+            },
+            metodoSaludo: function() {
+                alert(`¡Hola, soy ${this.nombre}!`);
+            }
+        };  
+
+        // Paso 2: Declarar el objeto visitante
+        const visitante = {
+            nombre: 'Carlos',
+            direccion: null
+        };
+
+        // Paso 3: Usar encadenamiento opcional para mostrar información
+        console.log(`Calle del usuario: ${usuario.direccion?.calle ?? 'Información no disponible'}`);
+        console.log(`Calle del visitante: ${visitante.direccion?.calle ?? 'Información no disponible'}`);
+
+        // Llamar al método de saludo si existe
+        console.log(`Saludo del usuario: ${usuario.metodoSaludo ? usuario.metodoSaludo() : 'Información no disponible'}`);
+        console.log(`Saludo del visitante: ${visitante.metodoSaludo ? visitante.metodoSaludo() : 'Información no disponible'}`);
+
+        // Acceder a la propiedad 'email' de forma segura
+        console.log(`Email del usuario: ${usuario['email'] ?? 'Información no disponible'}`);
+        console.log(`Email del visitante: ${visitante['email'] ?? 'Información no disponible'}`);
+    </script>
+</body>
+
+</html>

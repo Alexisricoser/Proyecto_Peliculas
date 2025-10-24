@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Examen</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>Ejercicio 3 - Examen</h1>
+    <script>
+
+        let hora = prompt('Introduce una hora del dia (HH:MM)');
+        let parts = hora.split(':');
+        let h = parseInt(parts[0]);
+        let m = parseInt(parts[1]);
+        if (h < 0 || h > 23 || m < 0 || m > 59 || parts.length != 2 || isNaN(h) || isNaN(m)) {
+            alert('Información introducida incorrecta');
+        } else if (h >= 0 && h < 6) {
+            alert('Madrugada');
+        } else if (h >= 6 && h < 12) {
+            alert('Mañana');
+        } else if (h >= 12 && h < 19) {
+            alert('Tarde');
+        } else {
+            alert('Noche');
+        }
+    </script>
+</body>
+
+</html>
