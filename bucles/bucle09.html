@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+      //Escribe el código utilizando if..else que corresponda al siguiente switch:
+      /*switch (navegador) {
+case 'Edge':
+alert( "¡Tienes Edge!" );
+break;
+case 'Chrome':
+case 'Firefox':
+case 'Safari':
+case 'Opera':
+alert( 'Esta bien, soportamos estos navegadores también' );
+break;
+default:
+alert( '¡Esperamos que esta página se vea bien!' );
+}*/
+
+      let navegador = prompt("¿Qué navegador estás usando?", "");
+      if (navegador === "Edge") {
+        alert("¡Tienes Edge!");
+      } else if (
+        navegador === "Chrome" ||
+        navegador === "Firefox" ||
+        navegador === "Safari" ||
+        navegador === "Opera"
+      ) {
+        alert("Esta bien, soportamos estos navegadores también");
+      } else {
+        alert("¡Esperamos que esta página se vea bien!");
+      }
+ 
+ </script>
+</body>
+
+</html>

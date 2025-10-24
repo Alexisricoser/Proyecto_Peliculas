@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <script>
+ /*A*/
+        /* Indica si las siguientes declaraciones son válidas o no, y explica por qué:
+    const 1nombre = "Pau";    
+    let $ciudad = "Valencia";
+    var nombre-usuario = "Alex";*/
+  const 1nombre = "Pau"; // No es válida. Los identificadores no pueden comenzar con un número
+  let $ciudad = "Valencia"; // Es válida. Los identificadores pueden comenzar con $ o _
+  var nombre-usuario = "Alex"; // No es válida. Los identificadores no pueden contener -
+        /* 
+        Explica brevemente la diferencia entre let, const y var. Añade un ejemplo corto de cada una utilizando alert() para mostrar el valor.
+        */
+                                            // var: tiene un alcance de función y puede ser redeclarada y reasignada.
+    var edad = 25;
+    alert("Edad: " + edad);
+    edad = 26; // reasignación
+    alert("Nueva Edad: " + edad);
+                                            //let: tiene un alcance de bloque y puede ser reasignada pero no redeclarada en el mismo ámbito.
+    let ciudad = "Madrid";
+    alert("Mi ciudad es :" + ciudad)
+                     //const: tiene un alcance de bloque y no puede ser redeclarada ni reasignada.
+     const nombre = "Sokayna";
+     alert("Mi nombre es: " + nombre)   
+     
+     //Escribe qué mensaje aparecerá en pantalla en cada caso:
+     alert("2" + 3 + 4);  //27
+    alert(2 + 3 + "4");  //54
+    alert("10" – 4);    //10-4
+    alert("a" * 2);    // aa
+
+    //Completa el código para que convierta correctamente la entrada del usuario a número y muestre su suma:
+    let a = Number(prompt("Primer número:", ""))
+    let b = Number(prompt("Segundo número:", ""))
+    alert("La suma es: " + a + b)
+
+    // 
+</script>
+</body>
+</html>

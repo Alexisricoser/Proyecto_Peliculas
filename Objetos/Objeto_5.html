@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /*
+        Crea un objeto calculator con tres métodos:
+read() pide dos valores y los almacena como propiedades de objeto con
+nombres a y b.
+sum() devuelve la suma de los valores almacenados.
+mul() multiplica los valores almacenados y devuelve el resultado.
+let calculator = {
+// ... tu código ...
+};
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+*/
+        let calculator = {
+            read() {
+                this.a = +prompt("Ingrese el primer número:", 0);
+                this.b = +prompt("Ingrese el segundo número:", 0);
+            },
+            sum() {
+                return this.a + this.b;
+            },
+            mul() {
+                return this.a * this.b;
+            }
+        };
+        calculator.read();
+        alert( calculator.sum() );
+        alert( calculator.mul() );
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /* 
+        ¿Cuál es el resultado y por qué?
+let arr = ["a", "b"];
+arr.push(function() {
+alert( this );
+});
+arr[2](); // ?
+*/
+        let arr = ["a", "b"];
+        arr.push(function() {
+            alert(this);
+        });
+        arr[2](); // a,b,function(){...}
+    </script>
+</body>
+
+</html>

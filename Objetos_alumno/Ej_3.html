@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Página HTML</h1>
+	<p>Disponemos el contenido HTML</p>
+    <script>
+        /* Crea la función countProperties(obj) que:
+1. Devuelva cuántas propiedades tiene un objeto.
+2. Liste todas sus claves usando for..in.
+Prueba con:
+let user = {
+name: "Laura",
+age: 22,
+city: "Madrid"
+};
+*/
+    let user = {
+    name: "Laura",
+    age: 22,
+    city: "Madrid"
+    };  
+
+    function countProperties(obj){
+        let contador = 0;
+        for(let key in  obj){
+            contador++;
+            alert(key);  
+        }
+        return contador;
+    }
+    let total = countProperties(user);
+    alert("El objeto tiene " + total + " propiedades.");
+
+    </script>
+</body>
+
+</html>
