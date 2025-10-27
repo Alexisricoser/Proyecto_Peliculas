@@ -1,18 +1,18 @@
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
-  background: #f5f3ff; /* Lavanda muy claro */
-  color: #3b0764; /* Morado oscuro */
+  background: #f8fafc; /* gris azulado muy claro */
+  color: #1e293b; /* gris oscuro azulado */
 }
 
 h1, h2 {
   text-align: center;
-  color: #7c3aed; /* Morado principal */
+  color: #ff4b5c; /* rojo coral principal */
 }
 
 button {
-  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-  color: #fff;
+  background: linear-gradient(90deg, #3b82f6, #2563eb); /* azul degradado */
+  color: white;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
@@ -20,80 +20,81 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 button:hover {
-  background: linear-gradient(90deg, #7c3aed, #6d28d9);
+  background: linear-gradient(90deg, #2563eb, #1e40af);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(109, 40, 217, 0.4);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
 }
 
 #contForm, #Catalogo {
   max-width: 750px;
   margin: 25px auto;
-  background: #ede9fe; /* Lavanda claro */
+  background: #ffffff;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(109, 40, 217, 0.15);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  border: 1px solid #e2e8f0;
 }
 
 input, select {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid #c4b5fd; /* Lila */
+  border: 1px solid #cbd5e1;
   margin-bottom: 12px;
-  background: #faf5ff;
-  color: #3b0764;
+  background: #f1f5f9;
   font-size: 15px;
+  color: #1e293b;
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: #8b5cf6;
-  box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
 }
 
 .contenido {
-  background: #faf5ff;
+  background: #fef2f2; /* fondo ligeramente rosado */
   padding: 18px;
   border-radius: 12px;
   margin-top: 12px;
-  border: 1px solid #c4b5fd;
-  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.15);
+  border: 1px solid #fca5a5; /* rojo suave */
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contenido:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 6px 18px rgba(255, 107, 107, 0.25);
 }
 
 .contenido h2 {
   margin: 0;
-  color: #6d28d9; /* Morado medio */
+  color: #ef4444; /* rojo brillante */
   font-size: 20px;
 }
 
 .contenido p {
   margin: 5px 0;
-  color: #4c1d95; /* Violeta intenso */
+  color: #1e40af; /* azul fuerte */
 }
 
 select {
-  background-color: #f3e8ff;
+  background-color: #e0f2fe; /* azul claro */
 }
 
 hr {
   border: none;
   height: 2px;
-  background: #c4b5fd;
+  background: linear-gradient(90deg, #ff6b6b, #3b82f6);
   margin: 20px 0;
 }
 
 .contadorCatalogo {
-  color: #4c1d95;
+  color: #1e40af;
   font-weight: 500;
 }
 
