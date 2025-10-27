@@ -1,19 +1,16 @@
-/* Colores inspirados en el logo: Rojo/Rosado (#F45B69), Amarillo Crema (#FCE8A1), Gris Oscuro (#3E3E3E), Blanco (#FFFFFF) */
-
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
-  background: #FFFBE6; /* Amarillo/Crema muy claro (casi blanco) */
-  color: #3E3E3E; /* Gris oscuro para el texto */
+  background: #FFFBE6;
+  color: #3E3E3E;
 }
 
 h1, h2 {
   text-align: center;
-  color: #F45B69; /* Rojo/Rosado del cubo de palomitas */
+  color: #F45B69;
 }
 
 button {
-  /* Botón con degradado Rojo/Rosado a un tono más profundo */
   background: linear-gradient(90deg, #F45B69, #D64C58);
   color: white;
   border: none;
@@ -23,7 +20,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 8px rgba(244, 91, 105, 0.4); /* Sombra roja */
+  box-shadow: 0 4px 8px rgba(244, 91, 105, 0.4);
 }
 
 button:hover {
@@ -35,21 +32,20 @@ button:hover {
 #contForm, #Catalogo {
   max-width: 750px;
   margin: 25px auto;
-  background: #ffffff; /* Blanco para el fondo de las secciones/post-its */
+  background: #ffffff;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(244, 91, 105, 0.2); /* Sombra suave roja/rosada */
-  border: 1px solid #F45B69; /* Borde rojo suave */
+  box-shadow: 0 4px 20px rgba(244, 91, 105, 0.2);
+  border: 1px solid #F45B69;
 }
 
-/* Aplicado a input y select para darles color */
 input, select {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid #D64C58; /* Borde de input rojo/rosado */
+  border: 1px solid #D64C58;
   margin-bottom: 12px;
-  background: #FFFBE6; /* ¡NUEVO! Color Crema/Amarillo para que tengan fondo */
+  background: #FFFBE6;
   font-size: 15px;
   color: #3E3E3E;
 }
@@ -61,12 +57,12 @@ input:focus, select:focus {
 }
 
 .contenido {
-  background: #FFFFFF; /* Blanco para el post-it individual */
+  background: #FFFFFF;
   padding: 18px;
   border-radius: 12px;
   margin-top: 12px;
-  border: 1px solid #3E3E3E; /* Borde oscuro */
-  box-shadow: 0 3px 10px rgba(244, 91, 105, 0.3); /* Sombra roja */
+  border: 1px solid #3E3E3E;
+  box-shadow: 0 3px 10px rgba(244, 91, 105, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -77,30 +73,24 @@ input:focus, select:focus {
 
 .contenido h2 {
   margin: 0;
-  color: #F45B69; /* Rojo/Rosado */
+  color: #F45B69;
   font-size: 20px;
 }
 
 .contenido p {
   margin: 5px 0;
-  color: #3E3E3E; /* Gris oscuro */
+  color: #3E3E3E;
 }
-
-/* El select ya usa el color crema del input, por lo que esta regla es redundante pero la mantengo */
-/* select {
-  background-color: #FCE8A1; 
-} */
 
 hr {
   border: none;
   height: 2px;
-  /* Línea divisora que combina el rojo/rosado y el color crema */
   background: linear-gradient(90deg, #F45B69, #FFFBE6);
   margin: 20px 0;
 }
 
 .contadorCatalogo {
-  color: #D64C58; /* Tono de rojo un poco más oscuro */
+  color: #D64C58;
   font-weight: 500;
 }
 
