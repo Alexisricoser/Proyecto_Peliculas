@@ -95,13 +95,43 @@ hr {
 }
 .botones-superiores {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
-  gap: 10px; 
-  max-width: 750px; 
-  margin: 20px auto 0 auto; 
-  padding-left: 10px; 
+  gap: 10px;
+  width: 750px;          
+  margin: 20px auto 0 auto;
+  transform: translateX(-25px); 
 }
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 20px; 
+  max-width: 750px;
+  margin: 20px auto 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #F45B69;
+}
+
+.logo {
+  position: absolute;
+  right: 15px;
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
 
 @media (max-width: 600px) {
   #Catalogo, #contForm {
