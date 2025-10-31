@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ✅ Validar año al enviar (por seguridad extra)
     formulario.addEventListener('submit', (e) => {
         const valor = parseInt(inputAnio.value);
-        if (isNaN(valor) || valor > anioActual || valor < 1800) {
+        if ( valor > anioActual || valor < 1800) {
             e.preventDefault();
             alert('Por favor, introduce un año válido (entre 1800 y ' + anioActual + ').');
             return false;
