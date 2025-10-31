@@ -23,38 +23,49 @@
     <hr>
 
     <div id="contForm" hidden>
-        <h2>Añadir pelcula</h2>
-        <form id="formulario">
-            <label for="Titulo">Titulo</label>
-            <br>
-            <input name="Titulo" type="text" id="Titulo">
-            <br>
-            <label  for="Director">Director</label>
-            <br>
-            <input name="Director" type="text" id="Director">
-            <br>
-            <label  for="año">Año de estreno</label>
-            <br>
-            <input name="año" type="text" id="año">
-            <br>
-            <label for="Genero">Género</label>
-            <br>
-            <input name="Genero" type="text" id="Genero">
-            <br>
-            <label for="Puntuacion">Puntuacion</label>
-            <br>
-            <select name="Puntuacion" id="Puntuacion">
+    <h2>Añadir película</h2>
+    <form id="formulario">
+        <label for="Titulo">Título</label><br>
+        <input name="Titulo" type="text" id="Titulo" required>
+        <br>
 
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
+        <label for="Director">Director</label><br>
+        <input name="Director" type="text" id="Director" required>
+        <br>
 
-            <button id="botonenviar">Añadir al catálogo</button>
-        </form>
-    </div>
+        <label for="año">Año de estreno</label><br>
+        <input name="año" type="number" id="año" min="1800" max="2026" placeholder="Ej: 2001" required>
+        <small id="errorAnio" style="color:red;display:none;">Año no válido</small>
+        <br>
+
+        <label for="Genero">Género</label><br>
+        <select name="Genero" id="Genero" required>
+            <option value="">Selecciona un género</option>
+            <option value="Accion">Acción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="Terror">Terror</option>
+            <option value="Ciencia ficcion">Ciencia ficción</option>
+            <option value="Fantasia">Fantasía</option>
+            <option value="Animacion">Animación</option>
+        </select>
+        <br>
+
+        <label for="Puntuacion">Puntuación</label><br>
+        <select name="Puntuacion" id="Puntuacion" required>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+        <br>
+
+        <button id="botonenviar">Añadir al catálogo</button>
+    </form>
+</div>
+
     <div id="Catalogo">
         <form>
             <input type="text" id="buscadorTitulo" placeholder="Buscar Titulo">
@@ -82,17 +93,6 @@
             <p>Valoracion: ⭐⭐⭐⭐⭐</p>
             <button class="Editar">Editar</button>
             <button class="Borrar">Borrar</button>
-        </div>
-        <div class="contenido">
-            <h2>Titulo: Shrek</h2>
-            <p>Director: Andrew Adamson</p>
-            <p>Genero: Comedia</p>
-            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
-        </div><div class="contenido">
-            <h2>Titulo: Shrek</h2>
-            <p>Director: Andrew Adamson</p>
-            <p>Genero: Comedia</p>
-            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
         </div>
     </div>
     <script src="js/peliculas.js"></script>
