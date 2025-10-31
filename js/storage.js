@@ -1,56 +1,55 @@
 // localstorage.js
 // -------------------------------------------------------------
 // Sincroniza las películas con el almacenamiento local del navegador
-// sin modificar la lógica principal del archivo peliculas.js
 // -------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ⬇️ Cargar películas desde localStorage al iniciar
+    // ⬇️ Recuperar películas guardadas
     const guardadas = JSON.parse(localStorage.getItem('peliculas')) || [];
     const nextIdGuardado = parseInt(localStorage.getItem('nextId')) || 1;
 
-    if (typeof peliculas !== 'undefined') {
-        peliculas = guardadas;
-        nextId = nextIdGuardado;
-    }
+    // Esperamos a que peliculas.js haya definido las variables globales
+    const esperarPeliculasListas = setInterval(() => {
+        if (typeof peliculas !== 'undefined' && typeof renderizarCatalogo === 'function') {
+            clearInterval(esperarPeliculasListas);
 
-    // Volvemos a renderizar el catálogo una vez cargadas
-    if (typeof renderizarCatalogo === 'function') {
-        renderizarCatalogo();
-    }
+            // Cargar datos
+            peliculas = guardadas;
+            nextId = nextIdGuardado;
 
-    // 🧩 Interceptar las funciones globales para guardar automáticamente
-    const guardar = () => {
-        localStorage.setItem('peliculas', JSON.stringify(peliculas));
-        localStorage.setItem('nextId', nextId.toString());
-    };
+            // Renderizar catálogo solo una vez cargados los datos
+            renderizarCatalogo();
 
-    // Guardar cada vez que se modifica el catálogo
-    const originalAgregar = window.agregarPelicula;
-    const originalActualizar = window.actualizarPelicula;
-    const originalEliminar = window.eliminarPelicula;
+            // 🧩 Guardar automáticamente cuando se modifica el catálogo
+            const guardar = () => {
+                localStorage.setItem('peliculas', JSON.stringify(peliculas));
+                localStorage.setItem('nextId', nextId.toString());
+            };
 
-    if (originalAgregar) {
-        window.agregarPelicula = function(datos) {
-            originalAgregar(datos);
-            guardar();
-        };
-    }
+            const originalAgregar = window.agregarPelicula;
+            const originalActualizar = window.actualizarPelicula;
+            const originalEliminar = window.eliminarPelicula;
 
-    if (originalActualizar) {
-        window.actualizarPelicula = function(id, datos) {
-            originalActualizar(id, datos);
-            guardar();
-        };
-    }
+            if (originalAgregar) {
+                window.agregarPelicula = function(datos) {
+                    originalAgregar(datos);
+                    guardar();
+                };
+            }
 
-    if (originalEliminar) {
-        window.eliminarPelicula = function(id) {
-            originalEliminar(id);
-            guardar();
-        };
-    }
+            if (originalActualizar) {
+                window.actualizarPelicula = function(id, datos) {
+                    originalActualizar(id, datos);
+                    guardar();
+                };
+            }
 
-    // 🗑️ Limpieza opcional: si borras todo el catálogo manualmente
-    // puedes ejecutar en consola localStorage.clear()
+            if (originalEliminar) {
+                window.eliminarPelicula = function(id) {
+                    originalEliminar(id);
+                    guardar();
+                };
+            }
+        }
+    }, 50); // Reintenta cada 50ms hasta que peliculas.js esté listo
 });
