@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCatalogo();
     cambiarVista('catalogo');
 });
-// ==== VALIDACIONES Y ATAJOS ====
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputAnio = document.getElementById('año');
     const errorAnio = document.getElementById('errorAnio');
@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectPuntuacion = document.getElementById('Puntuacion');
     const anioActual = new Date().getFullYear();
 
-    // ✅ Validar año mientras escribe
     inputAnio.addEventListener('input', () => {
         const valor = inputAnio.value.trim();
         if (!/^\d{0,4}$/.test(valor)) {
@@ -206,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ✅ Validar año al enviar (por seguridad extra)
     formulario.addEventListener('submit', (e) => {
         const valor = parseInt(inputAnio.value);
         if ( valor > anioActual || valor < 1800) {
@@ -216,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ✅ Atajo de teclado para seleccionar puntuación (1–5)
     selectPuntuacion.addEventListener('keydown', (e) => {
         if (/[1-5]/.test(e.key)) {
             selectPuntuacion.value = e.key;
@@ -224,14 +221,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ✅ Atajos de teclado en select de Género (autocompletado rápido)
     let buffer = '';
     let timer;
     selectGenero.addEventListener('keydown', (e) => {
         if (e.key.length === 1 && /[a-zA-Záéíóúüñ]/i.test(e.key)) {
             buffer += e.key.toLowerCase();
             clearTimeout(timer);
-            timer = setTimeout(() => buffer = '', 800); // se limpia después de 0.8s
+            timer = setTimeout(() => buffer = '', 800); 
 
             const opciones = Array.from(selectGenero.options);
             const match = opciones.find(opt => opt.textContent.toLowerCase().startsWith(buffer));
@@ -241,4 +237,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// ==== FIN VALIDACIONES Y ATAJOS ====
