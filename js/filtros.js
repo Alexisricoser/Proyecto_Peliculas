@@ -1,4 +1,4 @@
-// filtros.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputTitulo = document.getElementById('buscadorTitulo');
     const inputDirector = document.getElementById('buscadorDirector');
