@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catálogo de películas</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <img src="logo.png" alt="logo" id="logo" class="cabezera">
-    <h1 class="cabezera">Catalogo de peliculas</h1>
-    <br>
-    <button id="verCatalogo">Ver catalogo</button>
-    <button id="verForm">Añadir al catalogo</button>
+ <header class="encabezado">
+  <link rel="icon" type="image/png" href="logo.png">
+  <div class="encabezado-contenido">
+    <h1>Catálogo de películas</h1>
+    <div class="botones-superiores">
+      <button id="verCatalogo">Ver catálogo</button>
+      <button id="verForm">Añadir al catálogo</button>
+    </div>
+  </div>
+  <img src="logo.png" alt="Logo del catálogo" class="logo">
+ </header>
+
+    <hr>    
     <hr>
 
     <div id="contForm" hidden>
-        <h2>Añadir pelcula</h2>
-        <form id="formulario">
-            <label for="Titulo">Titulo</label>
-            <br>
-            <input name="Titulo" type="text" id="Titulo" required>
-            <br>
-            <label  for="Director">Director</label>
-            <br>
-            <input name="Director" type="text" id="Director" required>
-            <br>
-            <label  for="año">Año de estreno</label>
-            <br>
-            <input name="año" type="text" id="año" required>
-            <br>
-            <label for="Genero">Género</label>
-            <br>
-            <input name="Genero" type="text" id="Genero" required>
-            <br>
-            <label for="Puntuacion">Puntuacion</label>
-            <br>
-            <select name="Puntuacion" id="Puntuacion">
+    <h2>Añadir película</h2>
+    <form id="formulario">
+        <label for="Titulo">Título</label><br>
+        <input name="Titulo" type="text" id="Titulo" required>
+        <br>
 
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
+        <label for="Director">Director</label><br>
+        <input name="Director" type="text" id="Director" required>
+        <br>
 
-            <button id="botonenviar">Añadir al catálogo</button>
-        </form>
-    </div>
+        <label for="año">Año de estreno</label><br>
+        <input name="año" type="number" id="año" min="1800" max="2026" placeholder="Ej: 2001" required>
+        <small id="errorAnio" style="color:red;display:none;">Año no válido</small>
+        <br>
+
+        <label for="Genero">Género</label><br>
+        <select name="Genero" id="Genero" required>
+            <option value="">Selecciona un género</option>
+            <option value="Accion">Acción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="Terror">Terror</option>
+            <option value="Ciencia ficcion">Ciencia ficción</option>
+            <option value="Fantasia">Fantasía</option>
+            <option value="Animacion">Animación</option>
+        </select>
+        <br>
+
+        <label for="Puntuacion">Puntuación</label><br>
+        <select name="Puntuacion" id="Puntuacion" required>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+        <br>
+
+        <button id="botonenviar">Añadir al catálogo</button>
+    </form>
+</div>
+
     <div id="Catalogo">
         <form>
             <input type="text" id="buscadorTitulo" placeholder="Buscar Titulo">
@@ -68,7 +87,7 @@
             <p class="contadorCatalogo">Numero de peliculas/series: numero</p>
         </form>
         <div class="contenido">
-            <h2>Titulo: Shrek</h1>
+            <h2>Titulo: Shrek</h2>
             <p>Director: Andrew Adamson</p>
             <p>Año de estreno: 2013</p>
             <p>Genero: Comedia</p>
@@ -76,18 +95,9 @@
             <button class="Editar">Editar</button>
             <button class="Borrar">Borrar</button>
         </div>
-        <div class="contenido">
-            <h2>Titulo: Shrek</h1>
-            <p>Director: Andrew Adamson</p>
-            <p>Genero: Comedia</p>
-            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
-        </div><div class="contenido">
-            <h2>Titulo: Shrek</h1>
-            <p>Director: Andrew Adamson</p>
-            <p>Genero: Comedia</p>
-            <p>Valoracion: ⭐⭐⭐⭐⭐</p>
-        </div>
     </div>
     <script src="js/peliculas.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/filtros.js"></script>
 </body>
 </html>
